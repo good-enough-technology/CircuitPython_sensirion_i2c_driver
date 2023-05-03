@@ -7,7 +7,13 @@ from .errors import I2cTransceiveError, I2cChannelDisabledError, \
 from .transceiver_v1 import I2cTransceiverV1
 import time
 
-import logging
+from adafruit_platformdetect import Detector
+detector = Detector()
+if detector.board.any_embedded_linux:
+    import logging
+else:
+    import adafruit_logging as logging
+
 log = logging.getLogger(__name__)
 
 

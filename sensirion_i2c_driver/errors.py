@@ -11,6 +11,9 @@ if detector.board.any_embedded_linux:
 else:
     import adafruit_logging as logging
 
+    class IOError(OSError):
+        pass
+
 log = logging.getLogger(__name__)
 
 

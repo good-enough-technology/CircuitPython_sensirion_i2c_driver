@@ -3,7 +3,13 @@
 
 # from __future__ import absolute_import, division, print_function
 
-import logging
+from adafruit_platformdetect import Detector
+detector = Detector()
+if detector.board.any_embedded_linux:
+    import logging
+else:
+    import adafruit_logging as logging
+
 log = logging.getLogger(__name__)
 
 
