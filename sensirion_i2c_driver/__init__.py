@@ -11,7 +11,7 @@ detector = Detector()
 if detector.board.any_embedded_linux:
     from .linux_i2c_transceiver import LinuxI2cTransceiver as I2cTransceiver
 else:
-    from .adafruit_bus_device_i2c_transceiver import AdafruitBusDeviceI2cTransceiver as I2cTransceiver
+    from .circuitpython_i2c_transceiver import CircuitPythonI2cTransceiver as I2cTransceiver
 
 from .command import I2cCommand  # noqa: F401
 from .sensirion_command import SensirionI2cCommand  # noqa: F401
