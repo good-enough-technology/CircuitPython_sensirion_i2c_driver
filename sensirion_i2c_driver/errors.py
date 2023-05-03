@@ -1,9 +1,16 @@
 # -*- coding: utf-8 -*-
 # (c) Copyright 2019 Sensirion AG, Switzerland
 
-from __future__ import absolute_import, division, print_function
+# from __future__ import absolute_import, division, print_function
 
-import logging
+
+from adafruit_platformdetect import Detector
+detector = Detector()
+if detector.board.any_embedded_linux:
+    import logging
+else:
+    import adafruit_logging as logging
+
 log = logging.getLogger(__name__)
 
 
