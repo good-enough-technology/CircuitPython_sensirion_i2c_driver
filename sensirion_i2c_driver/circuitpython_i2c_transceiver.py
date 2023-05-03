@@ -1,15 +1,6 @@
 from adafruit_bus_device.i2c_device import I2CDevice
 from .transceiver_v1 import I2cTransceiverV1
 
-from adafruit_platformdetect import Detector
-detector = Detector()
-if detector.board.any_embedded_linux:
-    import logging
-else:
-    import adafruit_logging as logging
-
-logger = logging.getLogger(__name__)
-
 class CircuitPythonI2cTransceiver(I2cTransceiverV1):
     def __init__(self, i2c, device_address):
         super(CircuitPythonI2cTransceiver, self).__init__()
@@ -28,14 +19,11 @@ class CircuitPythonI2cTransceiver(I2cTransceiverV1):
 
     def write(self, data):
         data_bytes = bytearray(data) if isinstance(data, (bytes, bytearray, list, tuple)) else bytearray()
-        logger.debug(f"Writing data: {data_bytes.hex()}")
         with self._device as i2c_device:
             i2c_device.write(data_bytes)
 
     def read(self, count):
         read_buffer = bytearray(count)
-        logger.debug(f"Reading {count} bytes")
         with self._device as i2c_device:
             i2c_device.readinto(read_buffer)
-        logger.debug(f"Received data: {read_buffer.hex()}")
         return read_buffer
