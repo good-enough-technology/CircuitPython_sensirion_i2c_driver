@@ -1,5 +1,6 @@
 from adafruit_bus_device.i2c_device import I2CDevice
 from .transceiver_v1 import I2cTransceiverV1
+import time
 
 class CircuitPythonI2cTransceiver(I2cTransceiverV1):
     def __init__(self, i2c, device_address):
@@ -16,16 +17,27 @@ class CircuitPythonI2cTransceiver(I2cTransceiverV1):
         try:
             if tx_data is not None:
                 self.write(tx_data)
-            if rx_length is not None:
-                return status, error, self.read(rx_length)
-            
         except OSError as e:
             status = self.STATUS_UNSPECIFIED_ERROR
             error = e
+        
+        if read_delay > 0:
+            time.sleep(read_delay)
+        if(status == self.STATUS_OK):
+            try:
+                if rx_length is not None:
+                    return status, error, self.read(rx_length)
+            except OSError as e:
+                status = self.STATUS_UNSPECIFIED_ERROR
+                error = e
+        
         return status, error, bytearray()
+
 
     def write(self, data):
         data_bytes = bytearray(data) if isinstance(data, (bytes, bytearray, list, tuple)) else bytearray()
+        if(len(data_bytes) == 0):
+            return
         with self._device as i2c_device:
             i2c_device.write(data_bytes)
 
