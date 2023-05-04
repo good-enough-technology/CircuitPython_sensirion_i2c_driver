@@ -11,11 +11,18 @@ class CircuitPythonI2cTransceiver(I2cTransceiverV1):
         return "CircuitPython I2C Transceiver"
 
     def transceive(self, slave_address, tx_data, rx_length, read_delay, timeout):
-        if tx_data is not None:
-            self.write(tx_data)
-        if rx_length is not None:
-            return self.STATUS_OK, None, self.read(rx_length)
-        return self.STATUS_OK, None, bytearray()
+        error = None
+        status = self.STATUS_OK
+        try:
+            if tx_data is not None:
+                self.write(tx_data)
+            if rx_length is not None:
+                return status, error, self.read(rx_length)
+            
+        except OSError as e:
+            status = self.STATUS_UNSPECIFIED_ERROR
+            error = e
+        return status, error, bytearray()
 
     def write(self, data):
         data_bytes = bytearray(data) if isinstance(data, (bytes, bytearray, list, tuple)) else bytearray()
