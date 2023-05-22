@@ -2,7 +2,10 @@ Logging / Debugging
 ===================
 
 Every module of this package uses the `Python Logging Facility`_ to log debug
-messages, warnings etc. This page gives a quick overview how it works.
+messages, warnings etc when run on a Single Board Computer (SBC).
+It uses the `adafruit_logging` library for CircuitPython when run on embedded
+hardware, which is a CPython compatible alternative.
+This page gives a quick overview how the logging works.
 
 Usage
 -----
@@ -69,6 +72,8 @@ only critical messages will be logged):
     # Make connection less verbose
     sensirion_i2c_driver.connection.log.setLevel(level=logging.CRITICAL)
 
+    # or, assuming import board
+    # with CircuitPythonI2cTransceiver(board.I2C()) as transceiver:
     with LinuxI2cTransceiver('/dev/i2c-1') as transceiver:
         device = I2cDevice(I2cConnection(transceiver), slave_address=0x69)
         response = device.execute(I2cCommand(tx_data=b"\x80\x04", rx_length=6,
