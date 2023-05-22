@@ -19,3 +19,10 @@ Installation and Usage
 ----------------------
 
 The user manual is available at https://sensirion.github.io/python-i2c-driver/.
+
+
+Attribution
+-----------
+
+This library is a fork of the official python library from Sensirion, to 
+add support for CircuitPython on embedded devices and linux SBCs.
