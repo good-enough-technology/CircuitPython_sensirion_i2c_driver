@@ -13,6 +13,13 @@ transceivers, i.e. the low level code which controls the I²C hardware:
   to use an I²C device file provided by the Linux Kernel (e.g. "/dev/i2c-1").
   This transceiver allows to use for example the I²C pins of a Raspberry Pi.
 
+- :py:class:`~sensirion_i2c_driver.circuitpython_i2c_transceiver.CircuitPythonI2cTransceiver`
+  to use an I²C bus provided by adafruit_bus_device (e.g. board.I2C()).
+  This transceiver allows to use for example the I²C pins of an ESP32.
+
+- :py:class:`~sensirion_i2c_driver.I2cTransceiver`
+  An alias to Linux/CircuitPython I2cTransceiver, based on if embedded device.
+
 Other implementations are provided in separate Python packages (for
 architecture reasons). But to avoid having dependencies from those Packages
 to this one just to implement the transceiver interface, we define a backward
