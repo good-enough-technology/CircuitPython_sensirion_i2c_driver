@@ -7,7 +7,12 @@ from .errors import I2cTransceiveError, I2cChannelDisabledError, \
 from .transceiver_v1 import I2cTransceiverV1
 import time
 
-import logging
+import sys
+if sys.implementation.name.lower() == "circuitpython":
+    import adafruit_logging as logging
+else:
+    import logging
+
 log = logging.getLogger(__name__)
 
 
