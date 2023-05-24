@@ -3,7 +3,11 @@
 
 # from __future__ import absolute_import, division, print_function
 
-import logging
+import sys
+if sys.implementation.name.lower() == "circuitpython":
+    import adafruit_logging as logging
+else:
+    import logging
 log = logging.getLogger(__name__)
 
 
