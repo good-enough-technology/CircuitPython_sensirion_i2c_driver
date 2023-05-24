@@ -8,6 +8,10 @@ if sys.implementation.name.lower() == "circuitpython":
     import adafruit_logging as logging
 else:
     import logging
+
+class IOError(OSError):
+    pass
+
 log = logging.getLogger(__name__)
 
 
