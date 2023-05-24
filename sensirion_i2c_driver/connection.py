@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # (c) Copyright 2019 Sensirion AG, Switzerland
 
-from __future__ import absolute_import, division, print_function
+# from __future__ import absolute_import, division, print_function
 from .errors import I2cTransceiveError, I2cChannelDisabledError, \
     I2cNackError, I2cTimeoutError
 from .transceiver_v1 import I2cTransceiverV1
