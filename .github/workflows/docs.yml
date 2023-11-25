@@ -25,6 +25,10 @@ jobs:
         pip install sphinx
         # Install any other dependencies here
 
+    - name: Install Package
+      run: |
+        pip install .
+
     - name: Build Documentation
       run: |
         cd docs
