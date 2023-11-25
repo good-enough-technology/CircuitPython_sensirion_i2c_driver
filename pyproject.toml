@@ -14,5 +14,5 @@ documentation = "https://good-enough-technology.github.io/CircuitPython_sensirio
 
 [circup]
 circup_dependencies = [
-    "adafruit-busio"
+    "adafruit_bus_device"
 ]
