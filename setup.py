@@ -24,17 +24,17 @@ long_description = readme.strip() + "\n\n" + changelog.strip() + "\n"
 
 
 setup(
-    name='sensirion-i2c-driver',
+    name='circuitpython-sensirion-i2c-driver',
     version=version_string,
     author='Urban Bruhin',
     author_email='urban.bruhin@sensirion.com',
     description='Base Driver for Communicating With I2C Devices',
     license='BSD',
     keywords='sensirion i2c driver',
-    url='https://github.com/sensirion/python-i2c-driver',
+    url='https://github.com/good-enough-technology/CircuitPython_sensirion_i2c_driver',
     packages=find_packages(exclude=['tests', 'tests.*']),
     long_description=long_description,
-    python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, <4',
+    python_requires='>=3.5',
     install_requires=[
     ],
     extras_require={
