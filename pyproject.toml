@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "circuitpython-sensirion-i2c-driver"
+version = "1.0.1"
+description = "A CircuitPython driver for Sensirion I2C devices. Fork of original python version by Sensirion."
+authors = ["Tyeth Gundry <tyethgundry@googlemail.com>", "Sensirion AG <info@sensirion.com>"]
+license = "MIT"
+
+# Include URLs relevant to your project
+repository = "https://github.com/good-enough-technology/CircuitPython_sensirion_i2c_driver"
+homepage = "https://github.com/good-enough-technology/CircuitPython_sensirion_i2c_driver"
+documentation = "https://good-enough-technology.github.io/CircuitPython_sensirion_i2c_driver"
+
+#use docs/requirements.txt for documentation dependencies
+
+[circup]
+dependencies = [
+    "adafruit-busio"
+]
