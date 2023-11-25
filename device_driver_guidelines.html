@@ -1,93 +1,52 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Device Driver Guidelines &mdash; Sensirion I²C Python Driver 1.0.1 documentation</title>
-  
-
-  
-  
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon.ico"/>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-  
-  
-
-  
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
-        <script type="text/javascript" src="_static/jquery.js"></script>
-        <script type="text/javascript" src="_static/underscore.js"></script>
-        <script type="text/javascript" src="_static/doctools.js"></script>
-        <script type="text/javascript" src="_static/language_data.js"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
-  <link rel="stylesheet" href="_static/banner.css" type="text/css" />
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=292eb321"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="API Reference" href="api.html" />
     <link rel="prev" title="Logging / Debugging" href="logging_debugging.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="index.html" class="icon icon-home"> Sensirion I²C Python Driver
           
-
-          
+          <a href="index.html" class="icon icon-home">
+            Sensirion I²C Python Driver
           </a>
-
-          
-            
-            
               <div class="version">
                 1.0.1
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a></li>
@@ -111,83 +70,45 @@
 <li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">Sensirion I²C Python Driver</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
-      <li>Device Driver Guidelines</li>
-    
-    
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Device Driver Guidelines</li>
       <li class="wy-breadcrumbs-aside">
-        
-            
             <a href="_sources/device_driver_guidelines.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="device-driver-guidelines">
-<span id="id1"></span><h1>Device Driver Guidelines<a class="headerlink" href="#device-driver-guidelines" title="Permalink to this headline">¶</a></h1>
+             
+  <section id="device-driver-guidelines">
+<span id="id1"></span><h1>Device Driver Guidelines<a class="headerlink" href="#device-driver-guidelines" title="Link to this heading"></a></h1>
 <p>To help ensuring consistency between the various I²C device drivers, this page
 defines some guidelines how device drivers should be designed. It is highly
 recommended to follow these guidelines when creating a new device driver.</p>
-<div class="section" id="directory-structure">
-<h2>Directory Structure<a class="headerlink" href="#directory-structure" title="Permalink to this headline">¶</a></h2>
+<section id="directory-structure">
+<h2>Directory Structure<a class="headerlink" href="#directory-structure" title="Link to this heading"></a></h2>
 <p>It is recommended that each device driver contains (at least) the following
 two files:</p>
 <ul class="simple">
-<li><code class="docutils literal notranslate"><span class="pre">commands.py</span></code>: Containing all I²C command classes (derived from
-<a class="reference internal" href="api.html#sensirion_i2c_driver.command.I2cCommand" title="sensirion_i2c_driver.command.I2cCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">I2cCommand</span></code></a>).</li>
-<li><code class="docutils literal notranslate"><span class="pre">device.py</span></code>: Containing one device class (derived from
-<a class="reference internal" href="api.html#sensirion_i2c_driver.device.I2cDevice" title="sensirion_i2c_driver.device.I2cDevice"><code class="xref py py-class docutils literal notranslate"><span class="pre">I2cDevice</span></code></a>) to wrap each command by
-a method.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">commands.py</span></code>: Containing all I²C command classes (derived from
+<code class="xref py py-class docutils literal notranslate"><span class="pre">I2cCommand</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">device.py</span></code>: Containing one device class (derived from
+<code class="xref py py-class docutils literal notranslate"><span class="pre">I2cDevice</span></code>) to wrap each command by
+a method.</p></li>
 </ul>
 <p>If a Python package contains drivers for multiple I²C devices, create
 (possibly nested) subdirectories for them, for example like that:</p>
@@ -207,9 +128,9 @@ a method.</li>
 directory to re-export the classes so the user doesn’t need to care about the
 module names (e.g. allow importing <code class="docutils literal notranslate"><span class="pre">Sht3xI2cDevice</span></code> instead of
 <code class="docutils literal notranslate"><span class="pre">device.Sht3xI2cDevice</span></code>).</p>
-</div>
-<div class="section" id="command-base-class">
-<h2>Command Base Class<a class="headerlink" href="#command-base-class" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="command-base-class">
+<h2>Command Base Class<a class="headerlink" href="#command-base-class" title="Link to this heading"></a></h2>
 <p>Within <code class="docutils literal notranslate"><span class="pre">commands.py</span></code>, there should be a command class added which is then
 inherited by each command of the particular device. This is useful to specify
 the communication parameters which are common to all commands, for example the
@@ -231,25 +152,25 @@ CRC argorithm. This is how such a class could look like:</p>
         <span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="command-tx-rx-data-types">
-<h2>Command TX/RX Data Types<a class="headerlink" href="#command-tx-rx-data-types" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="command-tx-rx-data-types">
+<h2>Command TX/RX Data Types<a class="headerlink" href="#command-tx-rx-data-types" title="Link to this heading"></a></h2>
 <p>Sometimes it’s not easy to decide what type should be passed to the command
 constructor (data written to the device) or returned by the
-<a class="reference internal" href="api.html#sensirion_i2c_driver.command.I2cCommand.interpret_response" title="sensirion_i2c_driver.command.I2cCommand.interpret_response"><code class="xref py py-meth docutils literal notranslate"><span class="pre">interpret_response()</span></code></a> method
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">interpret_response()</span></code> method
 (data received from the device), respectively what physical unit these values
 should have. For example, physical values are often transferred over I²C as
 integers with a specific scaling and offset to get suitable resolution, but
 humans usually prefer to work with a standard physical unit.</p>
 <p>To help deciding how to implement it, here some possible solutions:</p>
-<div class="section" id="pass-through-raw-values">
-<h3>Pass-Through Raw Values<a class="headerlink" href="#pass-through-raw-values" title="Permalink to this headline">¶</a></h3>
+<section id="pass-through-raw-values">
+<h3>Pass-Through Raw Values<a class="headerlink" href="#pass-through-raw-values" title="Link to this heading"></a></h3>
 <p>This variant is recommended if the value represents no physical unit or has no
 offset and scaling.</p>
 <p>Examples:</p>
 <ul class="simple">
-<li>Measure interval in Milliseconds (e.g. <code class="docutils literal notranslate"><span class="pre">5</span></code> represents 5 ms)</li>
-<li>Serial number as a string (no physical unit)</li>
+<li><p>Measure interval in Milliseconds (e.g. <code class="docutils literal notranslate"><span class="pre">5</span></code> represents 5 ms)</p></li>
+<li><p>Serial number as a string (no physical unit)</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">struct</span> <span class="kn">import</span> <span class="n">pack</span><span class="p">,</span> <span class="n">unpack</span>
 
@@ -267,9 +188,9 @@ offset and scaling.</p>
         <span class="k">return</span> <span class="n">unpack</span><span class="p">(</span><span class="s2">&quot;&gt;HH&quot;</span><span class="p">,</span> <span class="n">checked_data</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="physical-value-conversion">
-<h3>Physical Value Conversion<a class="headerlink" href="#physical-value-conversion" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="physical-value-conversion">
+<h3>Physical Value Conversion<a class="headerlink" href="#physical-value-conversion" title="Link to this heading"></a></h3>
 <p>If the value has a physical meaning but is transmitted with an offset and/or
 scale factor, it’s recommended to create a separate class to convert between
 the underlying raw value and its physical value.</p>
@@ -317,12 +238,12 @@ the underlying raw value and its physical value.</p>
 <p>These classes (<code class="docutils literal notranslate"><span class="pre">Sht3xTemperature</span></code> in the example above) might be located in
 a module named <code class="docutils literal notranslate"><span class="pre">data_types.py</span></code> within the driver package, and re-exported in
 <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> to make them easily importable by users.</p>
-</div>
-<div class="section" id="response-data-types">
-<h3>Response Data Types<a class="headerlink" href="#response-data-types" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="response-data-types">
+<h3>Response Data Types<a class="headerlink" href="#response-data-types" title="Link to this heading"></a></h3>
 <p>Sometimes a command returns a lot of different values. With the variants
 mentioned above, this would lead
-<a class="reference internal" href="api.html#sensirion_i2c_driver.command.I2cCommand.interpret_response" title="sensirion_i2c_driver.command.I2cCommand.interpret_response"><code class="xref py py-meth docutils literal notranslate"><span class="pre">interpret_response()</span></code></a>
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">interpret_response()</span></code>
 returning a tuple with many values, which is often cumbersome to use since the
 values are only identified by their position in the tuple (i.e. are not named).</p>
 <p>For such commands, you might consider creating a class to represent the whole
@@ -376,10 +297,10 @@ can use it to interpret its response.</p>
 <p>These classes (<code class="docutils literal notranslate"><span class="pre">Sht3xExampleI2cResponse</span></code> in the example above) might be
 located in a module named <code class="docutils literal notranslate"><span class="pre">data_types.py</span></code> within the driver package, and
 re-exported in <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> to make them easily importable by users.</p>
-</div>
-</div>
-<div class="section" id="device-class">
-<h2>Device Class<a class="headerlink" href="#device-class" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="device-class">
+<h2>Device Class<a class="headerlink" href="#device-class" title="Link to this heading"></a></h2>
 <p>The command classes mentioned above are fine to specify the I²C interface of
 each command in an object oriented manner. This is useful for various special
 use-cases, for example to execute I²C commands asynchronously on standalone I²C
@@ -389,7 +310,7 @@ a machine readable specification of the I²C commands is available.</p>
 <p>But for the typical use-case of synchronously sending commands to a device and
 waiting for the response, it’s not very convenient to work with these command
 classes directly. Therefore device drivers should provide a device class
-(derived from <a class="reference internal" href="api.html#sensirion_i2c_driver.device.I2cDevice" title="sensirion_i2c_driver.device.I2cDevice"><code class="xref py py-class docutils literal notranslate"><span class="pre">I2cDevice</span></code></a>) which is
+(derived from <code class="xref py py-class docutils literal notranslate"><span class="pre">I2cDevice</span></code>) which is
 basically a thin wrapper around the commands. Typically, each command is
 wrapped by a corresponding method, with no additional logic added.</p>
 <p>Example:</p>
@@ -414,31 +335,31 @@ wrapped by a corresponding method, with no additional logic added.</p>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Even if
-<a class="reference internal" href="api.html#sensirion_i2c_driver.command.I2cCommand.interpret_response" title="sensirion_i2c_driver.command.I2cCommand.interpret_response"><code class="xref py py-meth docutils literal notranslate"><span class="pre">interpret_response()</span></code></a> of
+<p class="admonition-title">Note</p>
+<p>Even if
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">interpret_response()</span></code> of
 a command does not return any data, you must still return the result of
-<a class="reference internal" href="api.html#sensirion_i2c_driver.device.I2cDevice.execute" title="sensirion_i2c_driver.device.I2cDevice.execute"><code class="xref py py-meth docutils literal notranslate"><span class="pre">execute()</span></code></a>, because in
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">execute()</span></code>, because in
 multi channel mode this method will return a list containing the
 exception objects if I²C errors occurred.</p>
 </div>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
+<p class="admonition-title">Warning</p>
 <p>In some specific cases, it might still make sense to add some additional
 logic to these wrapper methods. Then you should keep in mind that
-<a class="reference internal" href="api.html#sensirion_i2c_driver.device.I2cDevice.execute" title="sensirion_i2c_driver.device.I2cDevice.execute"><code class="xref py py-meth docutils literal notranslate"><span class="pre">execute()</span></code></a> returns a list
+<code class="xref py py-meth docutils literal notranslate"><span class="pre">execute()</span></code> returns a list
 of values in case a multi channel transceiver is used. So you’ll have to
 handle both, single channel return values and multi channel return values.
 Read the property
-<a class="reference internal" href="api.html#sensirion_i2c_driver.connection.I2cConnection.is_multi_channel" title="sensirion_i2c_driver.connection.I2cConnection.is_multi_channel"><code class="xref py py-attr docutils literal notranslate"><span class="pre">is_multi_channel</span></code></a>
+<code class="xref py py-attr docutils literal notranslate"><span class="pre">is_multi_channel</span></code>
 of the underlying
-<a class="reference internal" href="api.html#sensirion_i2c_driver.connection.I2cConnection" title="sensirion_i2c_driver.connection.I2cConnection"><code class="xref py py-class docutils literal notranslate"><span class="pre">I2cConnection</span></code></a> to determine
+<code class="xref py py-class docutils literal notranslate"><span class="pre">I2cConnection</span></code> to determine
 whether the returned value is a single- or multi channel response.</p>
 <p>In addition, for multi channel responses, keep in mind that the returned
 values might contain exception objects instead of received data. These need
 to be handled accordingly.</p>
 <p>Example:</p>
-<div class="last highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simple_example</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">measure_interval_ms</span><span class="p">,</span> <span class="n">delay_ms</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simple_example</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">measure_interval_ms</span><span class="p">,</span> <span class="n">delay_ms</span><span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">Sht3xI2cCmdSimpleExample</span><span class="p">(</span><span class="n">measure_interval_ms</span><span class="p">,</span> <span class="n">delay_ms</span><span class="p">))</span>
 
     <span class="c1"># Multiply all received values by 2</span>
@@ -452,9 +373,9 @@ to be handled accordingly.</p>
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="api-example">
-<h2>API Example<a class="headerlink" href="#api-example" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="api-example">
+<h2>API Example<a class="headerlink" href="#api-example" title="Link to this heading"></a></h2>
 <p>From the user perspective, the API of such a device driver might look as
 following:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sensirion_i2c_sht.sht3x</span> <span class="kn">import</span> <span class="n">Sht3xI2cDevice</span><span class="p">,</span> <span class="n">Sht3xTemperature</span>
@@ -484,74 +405,38 @@ following:</p>
 <span class="n">measure_interval_ms</span><span class="p">,</span> <span class="n">delay_ms</span> <span class="o">=</span> <span class="n">cmd</span><span class="o">.</span><span class="n">interpret_response</span><span class="p">(</span><span class="n">raw_received_data</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="api.html" class="btn btn-neutral float-right" title="API Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="logging_debugging.html" class="btn btn-neutral float-left" title="Logging / Debugging" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="logging_debugging.html" class="btn btn-neutral float-left" title="Logging / Debugging" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="api.html" class="btn btn-neutral float-right" title="API Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright 2021 Sensirion AG, Switzerland
-
-    </p>
+    <p>&#169; Copyright 2023 Sensirion AG, Switzerland.</p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
-        <span class="fa fa-book"> Other Versions</span>
-        v: master
-        <span class="fa fa-caret-down"></span>
-    </span>
-    <div class="rst-other-versions">
-        <dl>
-            <dt>Tags</dt>
-            <dd><a href="0.1.0/index.html">0.1.0</a></dd>
-            <dd><a href="1.0.0/device_driver_guidelines.html">1.0.0</a></dd>
-        </dl>
-        <dl>
-            <dt>Branches</dt>
-            <dd><a href="master/device_driver_guidelines.html">master</a></dd>
-        </dl>
-    </div>
-</div>
-
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

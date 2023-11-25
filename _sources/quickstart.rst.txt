@@ -13,7 +13,7 @@ Following example code shows how the driver is intended to use:
 .. sourcecode:: python
 
     from struct import pack
-    from sensirion_i2c_driver import LinuxI2cTransceiver, I2cConnection, \
+    from sensirion_i2c_driver import I2cTransceiver, I2cConnection, \
         I2cDevice, SensirionI2cCommand, CrcCalculator
 
 
@@ -44,6 +44,7 @@ Following example code shows how the driver is intended to use:
 
 
     # Usage
-    with LinuxI2cTransceiver('/dev/i2c-1') as transceiver:
+    # I2cTransceiver import is Automatically switched between Linux/CircuitPython
+    with I2cTransceiver('/dev/i2c-1') as transceiver:
         device = MyI2cDevice(I2cConnection(transceiver))
         print("Serial Number: {}".format(device.read_serial_number()))
