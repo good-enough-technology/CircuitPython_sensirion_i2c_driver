@@ -37,5 +37,7 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
+        github_user: 'tyeth'
+        github_email: 'tyethgundry@googlemail.com'
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./docs/_build/html
