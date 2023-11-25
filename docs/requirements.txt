@@ -1,5 +1,5 @@
-sphinx~=1.8.3
-sphinx_rtd_theme~=0.4.2
+sphinx>=3.0
+sphinx_rtd_theme>=0.5.0
 
 # Unfortunately the pip package "sphinxcontrib-versioning" is
 # broken and not maintained anymore, thus cloning it directly from
