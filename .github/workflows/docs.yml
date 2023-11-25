@@ -21,8 +21,10 @@ jobs:
 
     - name: Install Dependencies
       run: |
+        sudo apt-get install tree
         python -m pip install --upgrade pip
         pip install sphinx sphinx_rtd_theme
+        pip install -r docs/requirements.txt
         # Install any other dependencies here
 
     - name: Install Package
@@ -33,6 +35,8 @@ jobs:
       run: |
         cd docs
         make html
+        ls _build/html
+        tree _build/html
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
@@ -40,4 +44,4 @@ jobs:
         user_name: 'tyeth'
         user_email: 'tyethgundry@googlemail.com'
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./docs/_build/html
+        publish_dir: docs/_build/html
