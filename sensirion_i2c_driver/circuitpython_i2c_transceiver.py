@@ -20,7 +20,7 @@ class CircuitPythonI2cTransceiver(I2cTransceiverV1):
         except OSError as e:
             status = self.STATUS_UNSPECIFIED_ERROR
             error = e
-        
+
         if read_delay > 0:
             time.sleep(read_delay)
         if(status == self.STATUS_OK):
@@ -30,7 +30,7 @@ class CircuitPythonI2cTransceiver(I2cTransceiverV1):
             except OSError as e:
                 status = self.STATUS_UNSPECIFIED_ERROR
                 error = e
-        
+
         return status, error, bytearray(b"")
 
 

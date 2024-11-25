@@ -7,7 +7,7 @@ sensor drivers. For details, please read the package description in
 
 ## Attribution ** FORK **
 
-This library is a fork of the official python library from Sensirion, to 
+This library is a fork of the official python library from Sensirion, to
 add support for CircuitPython on embedded devices and linux SBCs.
 
 ## Usage
