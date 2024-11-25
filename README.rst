@@ -1,4 +1,4 @@
-sensirion-i2c-driver
+circuitpython-sensirion-i2c-driver
 ====================
 
 This package contains the base I²C driver for various Sensirion sensors.

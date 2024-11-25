@@ -2,7 +2,7 @@
 # (c) Copyright 2019 Sensirion AG, Switzerland
 
 from __future__ import absolute_import, division, print_function
-from sensirion_i2c_driver import I2cDevice, I2cConnection, I2cCommand
+from circuitpython_sensirion_i2c_driver import I2cDevice, I2cConnection, I2cCommand
 from mock import MagicMock
 
 

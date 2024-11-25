@@ -29,7 +29,7 @@ logging level to ``DEBUG``:
 
 .. sourcecode:: python
 
-    from sensirion_i2c_driver import LinuxI2cTransceiver, I2cConnection, \
+    from circuitpython_sensirion_i2c_driver import LinuxI2cTransceiver, I2cConnection, \
         I2cDevice, I2cCommand
 
     import logging
@@ -46,8 +46,8 @@ This way the raw data is printed to the console:
 
 .. sourcecode:: console
 
-    DEBUG:sensirion_i2c_driver.connection:I2cConnection send raw: slave_address=105 rx_length=6 read_delay=0.005 timeout=0.0 tx_data=[0x80, 0x04]
-    DEBUG:sensirion_i2c_driver.connection:I2cConnection received raw: [0x00, 0x09, 0x09, 0x3A, 0x80, 0xA7]
+    DEBUG:circuitpython_sensirion_i2c_driver.connection:I2cConnection send raw: slave_address=105 rx_length=6 read_delay=0.005 timeout=0.0 tx_data=[0x80, 0x04]
+    DEBUG:circuitpython_sensirion_i2c_driver.connection:I2cConnection received raw: [0x00, 0x09, 0x09, 0x3A, 0x80, 0xA7]
     Received 6 bytes
 
 
@@ -56,21 +56,21 @@ Change Logging Verbosity of Modules
 
 Since every module contains its own logging object ``log``, it's even possible
 to set the logging level of each module independently. For example, the
-verbosity of the :py:class:`~sensirion_i2c_driver.connection.I2cConnection`
+verbosity of the :py:class:`~circuitpython_sensirion_i2c_driver.connection.I2cConnection`
 class could be reduced by changing its logging level to ``CRITICAL`` (i.e.
 only critical messages will be logged):
 
 .. sourcecode:: python
 
-    import sensirion_i2c_driver
-    from sensirion_i2c_driver import LinuxI2cTransceiver, I2cConnection, \
+    import circuitpython_sensirion_i2c_driver
+    from circuitpython_sensirion_i2c_driver import LinuxI2cTransceiver, I2cConnection, \
         I2cDevice, I2cCommand
 
     import logging
     logging.basicConfig(level=logging.DEBUG)
 
     # Make connection less verbose
-    sensirion_i2c_driver.connection.log.setLevel(level=logging.CRITICAL)
+    circuitpython_sensirion_i2c_driver.connection.log.setLevel(level=logging.CRITICAL)
 
     # or, assuming import board
     # with CircuitPythonI2cTransceiver(board.I2C()) as transceiver:

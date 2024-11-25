@@ -43,7 +43,7 @@ class I2cConnection(object):
         Set this to True to enforce the behaviour of a multi-channel
         connection, even if a single-channel transceiver is used. In
         particular, it makes the method
-        :py:meth:`~sensirion_i2c_driver.connection.I2cConnection.execute`
+        :py:meth:`~circuitpython_sensirion_i2c_driver.connection.I2cConnection.execute`
         always returning a list, without throwing an exception in case of
         communication errors. This might be useful for applications where
         both, single-channel and multi-channel communication is needed.
@@ -60,11 +60,11 @@ class I2cConnection(object):
     def is_multi_channel(self):
         """
         Check whether
-        :py:meth:`~sensirion_i2c_driver.connection.I2cConnection.execute` will
+        :py:meth:`~circuitpython_sensirion_i2c_driver.connection.I2cConnection.execute` will
         return a single-channel or multi-channel response.
 
         A multi-channel response is returned if either
-        :py:attr:`~sensirion_i2c_driver.connection.I2cConnection.always_multi_channel_response`
+        :py:attr:`~circuitpython_sensirion_i2c_driver.connection.I2cConnection.always_multi_channel_response`
         is set to ``True``, or the underlying transceiver is multi-channel.
 
         :return: True if multi-channel, False if single-channel.
@@ -76,7 +76,7 @@ class I2cConnection(object):
         else:
             raise Exception("The I2C transceiver API version {} is not "
                             "supported. You might need to update the "
-                            "sensirion-i2c-driver package.".format(
+                            "circuitpython-sensirion-i2c-driver package.".format(
                                 self._transceiver.API_VERSION))
 
     def execute(self, slave_address, command, wait_post_process=True):
@@ -89,11 +89,11 @@ class I2cConnection(object):
             The response data type of this method depends on whether this is a
             single-channel or multi-channel connection. This can be determined
             by reading the property
-            :py:attr:`~sensirion_i2c_driver.connection.I2cConnection.is_multi_channel`.
+            :py:attr:`~circuitpython_sensirion_i2c_driver.connection.I2cConnection.is_multi_channel`.
 
         :param byte slave_address:
             The slave address of the device to communicate with.
-        :param ~sensirion_i2c_driver.command.I2cCommand command:
+        :param ~circuitpython_sensirion_i2c_driver.command.I2cCommand command:
             The command to execute.
         :param bool wait_post_process:
             If ``True`` and the passed command needs some time for post
@@ -151,7 +151,7 @@ class I2cConnection(object):
         else:
             raise Exception("The I2C transceiver API version {} is not "
                             "supported. You might need to update the "
-                            "sensirion-i2c-driver package.".format(
+                            "circuitpython-sensirion-i2c-driver package.".format(
                                 self._transceiver.API_VERSION))
 
     def _transceive_v1(self, slave_address, tx_data, rx_length, read_delay,

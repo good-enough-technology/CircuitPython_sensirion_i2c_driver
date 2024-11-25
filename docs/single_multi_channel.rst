@@ -4,8 +4,8 @@ Single/Multi-Channel Mode
 =========================
 
 This driver (particularly
-:py:class:`~sensirion_i2c_driver.connection.I2cConnection` and
-:py:class:`~sensirion_i2c_driver.device.I2cDevice`) supports two different
+:py:class:`~circuitpython_sensirion_i2c_driver.connection.I2cConnection` and
+:py:class:`~circuitpython_sensirion_i2c_driver.device.I2cDevice`) supports two different
 modes of operation: single channel and multi channel.
 
 
@@ -16,8 +16,8 @@ Single Channel
 
 This mode allows to communicate with a single I²C bus at a time, which is the
 typical use-case. In this mode, the method
-:py:meth:`~sensirion_i2c_driver.connection.I2cConnection.execute` of
-:py:class:`~sensirion_i2c_driver.connection.I2cConnection` returns directly the
+:py:meth:`~circuitpython_sensirion_i2c_driver.connection.I2cConnection.execute` of
+:py:class:`~circuitpython_sensirion_i2c_driver.connection.I2cConnection` returns directly the
 interpreted response (e.g. a `float`) of the executed command if the operation
 was successful, or raise an exception in case of an error (NACK, timeout, ...).
 
@@ -39,8 +39,8 @@ Multi Channel
 In this mode, communication is done concurrently on multiple I²C buses. At
 Sensirion this is often used to execute measurements on multiple sensors at
 the same time. In this mode, the method
-:py:meth:`~sensirion_i2c_driver.connection.I2cConnection.execute` of
-:py:class:`~sensirion_i2c_driver.connection.I2cConnection` returns a list
+:py:meth:`~circuitpython_sensirion_i2c_driver.connection.I2cConnection.execute` of
+:py:class:`~circuitpython_sensirion_i2c_driver.connection.I2cConnection` returns a list
 containing the results for each channel. Each result is either the interpreted
 response of the executed command (if successful), or an exception object (in
 case of an error).
@@ -82,8 +82,8 @@ single channel mode.
 But in some cases it might be easier to always have the same API, independent
 of whether a multi- or single channel transceiver is used. Then you can
 enforce to always use multi channel responses with the property
-:py:attr:`~sensirion_i2c_driver.connection.I2cConnection.always_multi_channel_response`
-of :py:class:`~sensirion_i2c_driver.connection.I2cConnection`. For single
+:py:attr:`~circuitpython_sensirion_i2c_driver.connection.I2cConnection.always_multi_channel_response`
+of :py:class:`~circuitpython_sensirion_i2c_driver.connection.I2cConnection`. For single
 channel transceivers, the result will then always be a list containing one
 item. The behavior of multi channel transceivers is not affected by this
 property.
@@ -104,10 +104,10 @@ Determine Mode
 --------------
 
 To determine whether an
-:py:class:`~sensirion_i2c_driver.connection.I2cConnection` is in single channel
+:py:class:`~circuitpython_sensirion_i2c_driver.connection.I2cConnection` is in single channel
 or multi channel mode, the property
-:py:attr:`~sensirion_i2c_driver.connection.I2cConnection.is_multi_channel`
-can be read. On a :py:class:`~sensirion_i2c_driver.device.I2cDevice` object,
+:py:attr:`~circuitpython_sensirion_i2c_driver.connection.I2cConnection.is_multi_channel`
+can be read. On a :py:class:`~circuitpython_sensirion_i2c_driver.device.I2cDevice` object,
 it can be read as following:
 
 .. sourcecode:: python

@@ -2,7 +2,7 @@
 # (c) Copyright 2019 Sensirion AG, Switzerland
 
 from __future__ import absolute_import, division, print_function
-from sensirion_i2c_driver import CrcCalculator
+from circuitpython_sensirion_i2c_driver import CrcCalculator
 import pytest
 
 

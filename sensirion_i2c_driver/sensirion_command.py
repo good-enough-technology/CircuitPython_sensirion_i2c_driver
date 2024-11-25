@@ -11,7 +11,7 @@ class SensirionI2cCommand(I2cCommand):
     """
     Base class for Sensirion-specific I²C commands as used in most Sensirion
     sensor devices. This class extends the base class
-    :py:class:`~sensirion_i2c_driver.command.I2cCommand` with following
+    :py:class:`~circuitpython_sensirion_i2c_driver.command.I2cCommand` with following
     functionality:
 
     - Splitting TX data into command ID and payload data
@@ -51,7 +51,7 @@ class SensirionI2cCommand(I2cCommand):
             indicate that the device will not stretch the clock for this
             command.
         :param calleable crc:
-            A :py:class:`~sensirion_i2c_driver.crc_calculator.CrcCalculator`
+            A :py:class:`~circuitpython_sensirion_i2c_driver.crc_calculator.CrcCalculator`
             object to calculate the CRC of the transceived data, or any other
             calleable object or function which takes a bytearray as parameter
             and returns its CRC as an integer. If the command does not contain
@@ -87,7 +87,7 @@ class SensirionI2cCommand(I2cCommand):
             The received bytes, or None if there is no data received.
         :rtype:
             bytes or None
-        :raise ~sensirion_i2c_driver.errors.I2cChecksumError:
+        :raise ~circuitpython_sensirion_i2c_driver.errors.I2cChecksumError:
             If a received CRC was wrong.
         """
         if self._crc is None:
@@ -111,13 +111,13 @@ class SensirionI2cCommand(I2cCommand):
         Build the raw bytes to send from given command and TX data.
 
         :param command: See
-            :py:meth:`~sensirion_i2c_driver.sensirion_command.SensirionI2cCommand.__init__`.
+            :py:meth:`~circuitpython_sensirion_i2c_driver.sensirion_command.SensirionI2cCommand.__init__`.
         :param command_bytes: See
-            :py:meth:`~sensirion_i2c_driver.sensirion_command.SensirionI2cCommand.__init__`.
+            :py:meth:`~circuitpython_sensirion_i2c_driver.sensirion_command.SensirionI2cCommand.__init__`.
         :param tx_data: See
-            :py:meth:`~sensirion_i2c_driver.sensirion_command.SensirionI2cCommand.__init__`.
+            :py:meth:`~circuitpython_sensirion_i2c_driver.sensirion_command.SensirionI2cCommand.__init__`.
         :param crc: See
-            :py:meth:`~sensirion_i2c_driver.sensirion_command.SensirionI2cCommand.__init__`.
+            :py:meth:`~circuitpython_sensirion_i2c_driver.sensirion_command.SensirionI2cCommand.__init__`.
         :return:
             The raw bytes to send, or None if no write header is needed.
         :rtype:

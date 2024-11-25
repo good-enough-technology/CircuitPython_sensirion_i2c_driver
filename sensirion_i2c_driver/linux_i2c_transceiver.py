@@ -38,7 +38,7 @@ class LinuxI2cTransceiver(object):
         :param bool do_open:
             Whether the file should be opened immediately or not. If ``False``,
             you will have to call
-            :py:meth:`~sensirion_i2c_driver.linux_i2c_transceiver.LinuxI2cTransceiver.open`
+            :py:meth:`~circuitpython_sensirion_i2c_driver.linux_i2c_transceiver.LinuxI2cTransceiver.open`
             manually before using the transceiver. Defaults to ``True``.
         """
         super(LinuxI2cTransceiver, self).__init__()
@@ -56,7 +56,7 @@ class LinuxI2cTransceiver(object):
     def open(self):
         """
         Open the I²C port (only needs to be called if ``do_open`` in
-        :py:meth:`~sensirion_i2c_driver.linux_i2c_transceiver.LinuxI2cTransceiver.__init__`
+        :py:meth:`~circuitpython_sensirion_i2c_driver.linux_i2c_transceiver.LinuxI2cTransceiver.__init__`
         was set to ``False``.
         """
         self._file_descriptor = os.open(self._device_file, os.O_RDWR)
@@ -74,7 +74,7 @@ class LinuxI2cTransceiver(object):
         Description of the transceiver.
 
         For details (e.g. return value documentation), please refer to
-        :py:attr:`~sensirion_i2c_driver.transceiver_v1.I2cTransceiverV1.description`.
+        :py:attr:`~circuitpython_sensirion_i2c_driver.transceiver_v1.I2cTransceiverV1.description`.
         """
         return str(self._device_file)
 
@@ -84,7 +84,7 @@ class LinuxI2cTransceiver(object):
         Channel count of this transceiver.
 
         For details (e.g. return value documentation), please refer to
-        :py:attr:`~sensirion_i2c_driver.transceiver_v1.I2cTransceiverV1.channel_count`.
+        :py:attr:`~circuitpython_sensirion_i2c_driver.transceiver_v1.I2cTransceiverV1.channel_count`.
         """
         return None  # single channel transceiver
 
@@ -94,7 +94,7 @@ class LinuxI2cTransceiver(object):
         Transceive an I²C frame in single-channel mode.
 
         For details (e.g. parameter documentation), please refer to
-        :py:meth:`~sensirion_i2c_driver.transceiver_v1.I2cTransceiverV1.transceive`.
+        :py:meth:`~circuitpython_sensirion_i2c_driver.transceiver_v1.I2cTransceiverV1.transceive`.
 
         .. note::  The ``timeout`` parameter is not supported (i.e. ignored)
                    since we can't specify the clock stretching timeout. It

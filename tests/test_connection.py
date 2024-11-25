@@ -2,8 +2,8 @@
 # (c) Copyright 2019 Sensirion AG, Switzerland
 
 from __future__ import absolute_import, division, print_function
-from sensirion_i2c_driver import I2cConnection, I2cCommand
-from sensirion_i2c_driver.errors import I2cNackError, I2cTimeoutError
+from circuitpython_sensirion_i2c_driver import I2cConnection, I2cCommand
+from circuitpython_sensirion_i2c_driver.errors import I2cNackError, I2cTimeoutError
 from mock import MagicMock
 import pytest
 

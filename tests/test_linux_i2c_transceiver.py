@@ -2,7 +2,7 @@
 # (c) Copyright 2019 Sensirion AG, Switzerland
 
 from __future__ import absolute_import, division, print_function
-from sensirion_i2c_driver import LinuxI2cTransceiver
+from circuitpython_sensirion_i2c_driver import LinuxI2cTransceiver
 
 
 def test_open_close_file(tmpdir):

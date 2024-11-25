@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "circuitpython-sensirion-i2c-driver"
-version = "1.0.1"
+version = "1.0.2"
 description = "A CircuitPython driver for Sensirion I2C devices. Fork of original python version by Sensirion."
 authors = ["Tyeth Gundry <tyethgundry@googlemail.com>", "Sensirion AG <info@sensirion.com>"]
 license = "MIT"

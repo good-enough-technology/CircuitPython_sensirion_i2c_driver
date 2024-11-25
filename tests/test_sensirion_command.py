@@ -2,8 +2,8 @@
 # (c) Copyright 2019 Sensirion AG, Switzerland
 
 from __future__ import absolute_import, division, print_function
-from sensirion_i2c_driver import SensirionI2cCommand, CrcCalculator
-from sensirion_i2c_driver.errors import I2cChecksumError
+from circuitpython_sensirion_i2c_driver import SensirionI2cCommand, CrcCalculator
+from circuitpython_sensirion_i2c_driver.errors import I2cChecksumError
 import pytest
 
 

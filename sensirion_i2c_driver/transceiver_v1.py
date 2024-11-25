@@ -44,7 +44,7 @@ class I2cTransceiverV1(object):
     def channel_count(self):
         """
         Channel count of this transceiver. This is needed by
-        :py:class:`~sensirion_i2c_driver.connection.I2cConnection` to determine
+        :py:class:`~circuitpython_sensirion_i2c_driver.connection.I2cConnection` to determine
         whether this is a single-channel or multi-channel transceiver, and how
         many channels it has (in case of multi-channel).
 
