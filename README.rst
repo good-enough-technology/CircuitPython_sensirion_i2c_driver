@@ -18,7 +18,7 @@ frames, or if there is no specific driver available yet for your device.
 Installation and Usage
 ----------------------
 
-The user manual is available at https://sensirion.github.io/python-i2c-driver/.
+The user manual is available at https://good-enough-technology.github.io/circuitpython-sensirion-i2c-driver2c-driver/.
 
 
 Attribution
