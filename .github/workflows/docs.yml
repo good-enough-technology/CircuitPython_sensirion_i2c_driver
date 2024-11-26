@@ -9,7 +9,7 @@ on:
       run-environment:
         description: OS to run check on
         type: string
-        default: "ubuntu-22.04"
+        default: "ubuntu-20.04"
       build-python-version:
         description: Python version used for docs build
         type: string
@@ -17,7 +17,7 @@ on:
 
 jobs:
   build_pages:
-    runs-on: ${{ inputs.run-environment || 'ubuntu-22.04' }}
+    runs-on: ${{ inputs.run-environment || 'ubuntu-20.04' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
