@@ -5,43 +5,78 @@ on:
     branches:
       - master  # Replace with your default branch if it's not 'master'
   workflow_dispatch:
+    inputs:
+      run-environment:
+        description: OS to run check on
+        type: string
+        default: "ubuntu-22.04"
+      build-python-version:
+        description: Python version used for docs build
+        type: string
+        default: 3.11
 
 jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-
+  build_pages:
+    runs-on: ${{ inputs.run-environment }}
     steps:
-    - name: Checkout Source
-      uses: actions/checkout@v2
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ inputs.build-python-version }}
+          cache: "pip"
+      - name: Install the project dependencies
+        run: |
+          python setup.py install
+          python -m pip install -r docs/requirements.txt
+      - name: Build documentation
+        run: cd docs && make html
+      - name: Upload html
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./docs/_build/html
+      # - name: Deploy to GitHub Pages
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     user_name: 'tyeth'
+      #     user_email: 'tyethgundry@googlemail.com'
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: docs/_build/html
+          
+# build-and-deploy:
+#   runs-on: ubuntu-latest
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.12'  # Specify the Python version
+#   steps:
+#   - name: Checkout Source
+#     uses: actions/checkout@v2
 
-    - name: Install Dependencies
-      run: |
-        sudo apt-get install tree
-        python -m pip install --upgrade pip
-        pip install setuptools sphinx sphinx_rtd_theme
-        pip install -r docs/requirements.txt
-        # Install any other dependencies here
+#   - name: Set up Python
+#     uses: actions/setup-python@v2
+#     with:
+#       python-version: '3.12'  # Specify the Python version
 
-    - name: Install Package
-      run: |
-        pip install .
+#   - name: Install Dependencies
+#     run: |
+#       sudo apt-get install tree
+#       python -m pip install --upgrade pip
+#       pip install setuptools sphinx sphinx_rtd_theme
+#       pip install -r docs/requirements.txt
+#       # Install any other dependencies here
 
-    - name: Build Documentation
-      run: |
-        cd docs
-        make html
-        ls _build/html
-        tree _build/html
+#   - name: Install Package
+#     run: |
+#       pip install .
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        user_name: 'tyeth'
-        user_email: 'tyethgundry@googlemail.com'
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: docs/_build/html
+#   - name: Build Documentation
+#     run: |
+#       cd docs
+#       make html
+#       ls _build/html
+#       tree _build/html
+
+    # - name: Deploy to GitHub Pages
+    #   uses: peaceiris/actions-gh-pages@v3
+    #   with:
+    #     user_name: 'tyeth'
+    #     user_email: 'tyethgundry@googlemail.com'
+    #     github_token: ${{ secrets.GITHUB_TOKEN }}
+    #     publish_dir: docs/_build/html
