@@ -30,17 +30,17 @@ jobs:
           python -m pip install -r docs/requirements.txt
       - name: Build documentation
         run: cd docs && make html
-      - name: Upload html
+      - name: Upload html artifact for debugging
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./docs/_build/html
-      # - name: Deploy to GitHub Pages
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   with:
-      #     user_name: 'tyeth'
-      #     user_email: 'tyethgundry@googlemail.com'
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_dir: docs/_build/html
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          user_name: 'tyeth'
+          user_email: 'tyethgundry@googlemail.com'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs/_build/html
           
 # build-and-deploy:
 #   runs-on: ubuntu-latest
