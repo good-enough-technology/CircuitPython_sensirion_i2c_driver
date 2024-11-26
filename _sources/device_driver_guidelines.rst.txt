@@ -14,9 +14,9 @@ It is recommended that each device driver contains (at least) the following
 two files:
 
 - ``commands.py``: Containing all I²C command classes (derived from
-  :py:class:`~sensirion_i2c_driver.command.I2cCommand`).
+  :py:class:`~circuitpython_sensirion_i2c_driver.command.I2cCommand`).
 - ``device.py``: Containing one device class (derived from
-  :py:class:`~sensirion_i2c_driver.device.I2cDevice`) to wrap each command by
+  :py:class:`~circuitpython_sensirion_i2c_driver.device.I2cDevice`) to wrap each command by
   a method.
 
 If a Python package contains drivers for multiple I²C devices, create
@@ -52,7 +52,7 @@ CRC argorithm. This is how such a class could look like:
 
 .. sourcecode:: python
 
-    from sensirion_i2c_driver import SensirionI2cCommand, CrcCalculator
+    from circuitpython_sensirion_i2c_driver import SensirionI2cCommand, CrcCalculator
 
     class Sht3xI2cCmdBase(SensirionI2cCommand):
         def __init__(self, command, tx_data, rx_length, read_delay, timeout,
@@ -74,7 +74,7 @@ Command TX/RX Data Types
 
 Sometimes it's not easy to decide what type should be passed to the command
 constructor (data written to the device) or returned by the
-:py:meth:`~sensirion_i2c_driver.command.I2cCommand.interpret_response` method
+:py:meth:`~circuitpython_sensirion_i2c_driver.command.I2cCommand.interpret_response` method
 (data received from the device), respectively what physical unit these values
 should have. For example, physical values are often transferred over I²C as
 integers with a specific scaling and offset to get suitable resolution, but
@@ -173,7 +173,7 @@ Response Data Types
 
 Sometimes a command returns a lot of different values. With the variants
 mentioned above, this would lead
-:py:meth:`~sensirion_i2c_driver.command.I2cCommand.interpret_response`
+:py:meth:`~circuitpython_sensirion_i2c_driver.command.I2cCommand.interpret_response`
 returning a tuple with many values, which is often cumbersome to use since the
 values are only identified by their position in the tuple (i.e. are not named).
 
@@ -247,7 +247,7 @@ a machine readable specification of the I²C commands is available.
 But for the typical use-case of synchronously sending commands to a device and
 waiting for the response, it's not very convenient to work with these command
 classes directly. Therefore device drivers should provide a device class
-(derived from :py:class:`~sensirion_i2c_driver.device.I2cDevice`) which is
+(derived from :py:class:`~circuitpython_sensirion_i2c_driver.device.I2cDevice`) which is
 basically a thin wrapper around the commands. Typically, each command is
 wrapped by a corresponding method, with no additional logic added.
 
@@ -255,7 +255,7 @@ Example:
 
 .. sourcecode:: python
 
-    from sensirion_i2c_driver import I2cDevice
+    from circuitpython_sensirion_i2c_driver import I2cDevice
     from .commands import Sht3xI2cCmdSimpleExample, Sht3xI2cCmdDataTypeExample, \
         Sht3xI2cCmdResponseTypeExample
 
@@ -278,9 +278,9 @@ Example:
 .. note::
 
     Even if
-    :py:meth:`~sensirion_i2c_driver.command.I2cCommand.interpret_response` of
+    :py:meth:`~circuitpython_sensirion_i2c_driver.command.I2cCommand.interpret_response` of
     a command does not return any data, you must still return the result of
-    :py:meth:`~sensirion_i2c_driver.device.I2cDevice.execute()`, because in
+    :py:meth:`~circuitpython_sensirion_i2c_driver.device.I2cDevice.execute()`, because in
     multi channel mode this method will return a list containing the
     exception objects if I²C errors occurred.
 
@@ -289,13 +289,13 @@ Example:
 
     In some specific cases, it might still make sense to add some additional
     logic to these wrapper methods. Then you should keep in mind that
-    :py:meth:`~sensirion_i2c_driver.device.I2cDevice.execute()` returns a list
+    :py:meth:`~circuitpython_sensirion_i2c_driver.device.I2cDevice.execute()` returns a list
     of values in case a multi channel transceiver is used. So you'll have to
     handle both, single channel return values and multi channel return values.
     Read the property
-    :py:attr:`~sensirion_i2c_driver.connection.I2cConnection.is_multi_channel`
+    :py:attr:`~circuitpython_sensirion_i2c_driver.connection.I2cConnection.is_multi_channel`
     of the underlying
-    :py:class:`~sensirion_i2c_driver.connection.I2cConnection` to determine
+    :py:class:`~circuitpython_sensirion_i2c_driver.connection.I2cConnection` to determine
     whether the returned value is a single- or multi channel response.
 
     In addition, for multi channel responses, keep in mind that the returned

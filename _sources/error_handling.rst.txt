@@ -9,23 +9,23 @@ first.
 The following errors can occur when executing I²C commands:
 
 - Slave didn't acknowledge the data from the master (NACK): In this case,
-  you'll get an :py:class:`~sensirion_i2c_driver.errors.I2cTransceiveError`,
+  you'll get an :py:class:`~circuitpython_sensirion_i2c_driver.errors.I2cTransceiveError`,
   or its derived (i.e. more specific) error
-  :py:class:`~sensirion_i2c_driver.errors.I2cNackError`. It depends on the
+  :py:class:`~circuitpython_sensirion_i2c_driver.errors.I2cNackError`. It depends on the
   capabilities of the underlying I²C transceiver which error you'll get.
 - Slave stretched the clock line longer than expected (clock stretching
   timeout): Similar to the NACK error, you'll get an
-  :py:class:`~sensirion_i2c_driver.errors.I2cTransceiveError`,
-  or its derived error :py:class:`~sensirion_i2c_driver.errors.I2cTimeoutError`.
+  :py:class:`~circuitpython_sensirion_i2c_driver.errors.I2cTransceiveError`,
+  or its derived error :py:class:`~circuitpython_sensirion_i2c_driver.errors.I2cTimeoutError`.
 - On multi channel I²C transceivers, it's possible that some specific I²C
   channels are simply disabled, i.e. no I²C commands will be executed on these
   channels. Such channels will return the error
-  :py:class:`~sensirion_i2c_driver.errors.I2cChannelDisabledError`.
+  :py:class:`~circuitpython_sensirion_i2c_driver.errors.I2cChannelDisabledError`.
 - If the response of the executed I²C command contains CRCs (like
-  :py:class:`~sensirion_i2c_driver.sensirion_command.SensirionI2cCommand`),
-  you'll get an :py:class:`~sensirion_i2c_driver.errors.I2cChecksumError` if
+  :py:class:`~circuitpython_sensirion_i2c_driver.sensirion_command.SensirionI2cCommand`),
+  you'll get an :py:class:`~circuitpython_sensirion_i2c_driver.errors.I2cChecksumError` if
   at least one received CRC was wrong.
-- The :py:meth:`~sensirion_i2c_driver.command.I2cCommand.interpret_response`
+- The :py:meth:`~circuitpython_sensirion_i2c_driver.command.I2cCommand.interpret_response`
   method of executed commands might even raise any other exception which is
   then forwarded to you like any other error described above.
 - If the execution of I²C commands by the underlying transceiver completely
@@ -42,9 +42,9 @@ with ``try``/``except``:
 
 .. sourcecode:: python
 
-    from sensirion_i2c_driver import LinuxI2cTransceiver, I2cConnection, \
+    from circuitpython_sensirion_i2c_driver import LinuxI2cTransceiver, I2cConnection, \
         I2cDevice, I2cCommand
-    from sensirion_i2c_driver.errors import I2cNackError, I2cChecksumError
+    from circuitpython_sensirion_i2c_driver.errors import I2cNackError, I2cChecksumError
 
 
     class MyI2cDevice(I2cDevice):
@@ -88,9 +88,9 @@ responses.
 
 .. sourcecode:: python
 
-    from sensirion_i2c_driver import LinuxI2cTransceiver, I2cConnection, \
+    from circuitpython_sensirion_i2c_driver import LinuxI2cTransceiver, I2cConnection, \
         I2cDevice, I2cCommand
-    from sensirion_i2c_driver.errors import I2cNackError, I2cChecksumError
+    from circuitpython_sensirion_i2c_driver.errors import I2cNackError, I2cChecksumError
 
 
     class MyI2cDevice(I2cDevice):
